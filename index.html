@@ -3,19 +3,35 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> یونیتی - تولید کننده چسب‌های بسته بندی</title>
+  <title>یونیتی - تولید کننده چسب‌های بسته بندی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
   <script src="/_sdk/element_sdk.js"></script>
   <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #c41e3a;
+            --secondary-dark: #8b0000;
+            --bg-dark: #0a2540;
+            --text-main: #1a1a1a;
+            --text-light: #4a5568;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-            background: #ffffff;
-            color: #1a1a1a;
+            background: #fdfdfd;
+            color: var(--text-main);
             line-height: 1.8;
             overflow-x: hidden;
         }
@@ -24,844 +40,549 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #0a2540 0%, #1e3a5f 100%);
-            padding: 20px 0;
-            position: sticky;
+            background: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 6px;
-        }
-
-        nav a:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--white);
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #1a1a2e 100%);
-            padding: 100px 0;
-            text-align: center;
+            padding: 200px 0 140px;
+            background: radial-gradient(circle at top right, #1e3a5f, #0a2540);
             position: relative;
+            color: var(--white);
+            text-align: center;
             overflow: hidden;
         }
 
-        .hero::before {
+        .hero::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm76-26c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm-11 36c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zM52 4c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm15 16c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
 
         .hero h1 {
-            font-size: 56px;
-            color: #ffffff;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-            animation: fadeInUp 1s ease;
+            font-size: clamp(32px, 5vw, 64px);
+            font-weight: 900;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            animation: slideUp 0.8s ease-out;
         }
 
         .hero p {
-            font-size: 24px;
-            color: #e0e0e0;
-            margin-bottom: 40px;
-            animation: fadeInUp 1.2s ease;
+            font-size: clamp(16px, 2vw, 22px);
+            max-width: 800px;
+            margin: 0 auto 48px;
+            opacity: 0.9;
+            animation: slideUp 1s ease-out;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-            color: #ffffff;
-            padding: 18px 45px;
-            border-radius: 50px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--white);
+            padding: 18px 48px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.4);
-            animation: fadeInUp 1.4s ease;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
             border: none;
             cursor: pointer;
+            animation: slideUp 1.2s ease-out;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(196, 30, 58, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(196, 30, 58, 0.5);
+            filter: brightness(1.1);
         }
 
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-        }
-
+        /* Section Title */
         .section-title {
             text-align: center;
-            font-size: 42px;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
             margin-bottom: 60px;
-            color: #0a2540;
+            color: var(--bg-dark);
             position: relative;
-            padding-bottom: 20px;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
-            border-radius: 2px;
+            width: 80px;
+            height: 5px;
+            background: var(--primary);
+            border-radius: 10px;
         }
 
-        .about-content {
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
         }
 
         .about-card {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            background: #f8fafc;
+            padding: 48px;
+            border-radius: 24px;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
         }
 
         .about-card:hover {
+            background: var(--white);
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            border-color: #2563eb;
-        }
-
-        .about-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #0a2540;
-        }
-
-        .about-card p {
-            font-size: 16px;
-            color: #4a5568;
-            line-height: 1.8;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            border-color: var(--primary);
         }
 
         .icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 50px;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 100px 0;
+            background: var(--bg-dark);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+            text-align: center;
+        }
+
+        .stat-item h2 {
+            font-size: 60px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 18px;
+            opacity: 0.8;
         }
 
         /* Products Section */
         .products {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #0a2540 0%, #1e3a5f 100%);
-            color: #ffffff;
-        }
-
-        .products .section-title {
-            color: #ffffff;
-        }
-
-        .products .section-title::after {
-            background: linear-gradient(90deg, #c41e3a 0%, #8b0000 100%);
+            padding: 120px 0;
+            background: #f1f5f9;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .product-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            padding: 35px;
-            border-radius: 20px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
             text-align: center;
-            transition: all 0.4s ease;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         .product-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(37, 99, 235, 0.5);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
 
         .product-icon {
             font-size: 64px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
-        .product-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-
-        .product-card p {
-            font-size: 15px;
-            color: #e0e0e0;
-            line-height: 1.7;
-        }
-
-        /* Gallery Section */
+        /* Gallery */
         .gallery {
-            padding: 100px 0;
-            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+            padding: 120px 0;
+            background: var(--white);
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
         }
 
         .gallery-item {
-            background: #ffffff;
-            border-radius: 25px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s ease;
-            cursor: pointer;
-            position: relative;
-            border: 3px solid transparent;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            background: var(--white);
+            border: 1px solid #f1f5f9;
         }
 
         .gallery-item:hover {
-            transform: translateY(-20px);
-            box-shadow: 0 25px 70px rgba(37, 99, 235, 0.3);
-            border-color: #2563eb;
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
         }
 
         .gallery-image {
-            width: 100%;
-            height: 350px;
+            height: 300px;
             overflow: hidden;
             position: relative;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .gallery-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
-            z-index: 1;
-            transition: opacity 0.4s ease;
-        }
-
-        .gallery-item:hover .gallery-image::before {
-            opacity: 0;
         }
 
         .gallery-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
-            display: block;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .gallery-item:hover .gallery-image img {
-            transform: scale(1.2) rotate(3deg);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding: 30px;
-            z-index: 2;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay-text {
-            color: #ffffff;
-            font-size: 22px;
-            font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            text-align: center;
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
         .gallery-info {
-            padding: 30px;
-            text-align: center;
-            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-        }
-
-        .gallery-info h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
-            color: #0a2540;
-            font-weight: bold;
-        }
-
-        .gallery-info p {
-            font-size: 16px;
-            color: #4a5568;
-            line-height: 1.6;
+            padding: 24px;
+            text-align: right;
         }
 
         /* Features Section */
         .features {
-            padding: 100px 0;
-            background: #ffffff;
+            padding: 120px 0;
+            background: #f8fafc;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            gap: 24px;
         }
 
         .feature-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 40px;
+            background: var(--white);
+            padding: 32px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-            border-right: 5px solid #2563eb;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
         }
 
         .feature-card:hover {
-            transform: translateX(-10px);
-            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.2);
-        }
-
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #0a2540;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .feature-card p {
-            font-size: 15px;
-            color: #4a5568;
-            line-height: 1.8;
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
         .checkmark {
-            color: #2563eb;
-            font-size: 24px;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-            color: #ffffff;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .stat-item h2 {
-            font-size: 56px;
-            margin-bottom: 10px;
+            color: var(--primary);
             font-weight: bold;
-        }
-
-        .stat-item p {
-            font-size: 18px;
-            opacity: 0.95;
+            font-size: 24px;
+            flex-shrink: 0;
         }
 
         /* Contact Section */
         .contact {
-            padding: 100px 0;
-            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+            padding: 120px 0;
+            background: var(--white);
         }
 
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-info {
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
         }
 
         .contact-card {
-            background: #ffffff;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
+            padding: 40px;
+            border-radius: 24px;
+            background: #f8fafc;
+            text-align: center;
+            transition: var(--transition);
         }
 
         .contact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
-        }
-
-        .contact-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #0a2540;
-        }
-
-        .contact-card p {
-            font-size: 16px;
-            color: #4a5568;
+            background: var(--white);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
         .phone-number {
-            font-size: 22px;
-            font-weight: bold;
-            color: #2563eb;
-            margin: 15px 0 8px 0;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 16px 0;
             direction: ltr;
-            unicode-bidi: embed;
-        }
-
-        .contact-name {
-            font-size: 17px;
-            color: #0a2540;
-            font-weight: 600;
-            margin-top: 8px;
+            display: block;
         }
 
         /* Footer */
         footer {
-            background: #0a2540;
-            color: #ffffff;
-            padding: 50px 0 30px;
+            background: var(--bg-dark);
+            color: var(--white);
+            padding: 80px 0 40px;
             text-align: center;
         }
 
-        .footer-content {
-            margin-bottom: 30px;
-        }
-
-        .footer-content p {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }
-
         .copyright {
-            padding-top: 30px;
+            margin-top: 40px;
+            padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
-            font-size: 14px;
+            opacity: 0.6;
         }
 
         /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            nav {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .stat-item h2 {
-                font-size: 42px;
-            }
-
-            .products-grid,
-            .features-grid,
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-image {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 60px 0;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .cta-button {
-                padding: 15px 35px;
-                font-size: 16px;
-            }
-
-            .about,
-            .products,
-            .features,
-            .contact {
-                padding: 60px 0;
-            }
-
-            .phone-number {
-                font-size: 20px;
-            }
+            .hero { padding: 150px 0 80px; }
+            .header-content { justify-content: center; }
+            .section-title { margin-bottom: 40px; }
         }
     </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- </head><body><!-- Header -->
+ </head>
+ <body>
   <header>
    <div class="container">
     <div class="header-content">
-     <div class="logo" id="company-name">
-       یونیتی
-     </div>
-
+     <div class="logo" id="company-name">برنو یونیتی</div>
     </div>
    </div>
-  </header><!-- Hero Section -->
+  </header>
+
   <section class="hero">
    <div class="container">
-    <div class="hero-content">
-     <h1 id="hero-title">تولیدکننده پیشرو چسب‌های بسته‌بندی و صنعتی</h1>
-     <p id="hero-subtitle">با بیش از ۲۰ سال تجربه ارزشمند در تولید انواع چسب با کیفیت حرفه‌ای و دوام بی‌نظیر، ما همراه مطمئن شما در بسته‌بندی‌های صنعتی و خانگی هستیم.</p>
-     <a href="#contact" class="cta-button" id="cta-button">تماس با ما</a>
-    </div>
+    <h1 id="hero-title">تولیدکننده پیشرو چسب‌های بسته‌بندی و صنعتی</h1>
+    <p id="hero-subtitle">با بیش از ۲۰ سال تجربه ارزشمند در تولید انواع چسب با کیفیت حرفه‌ای و دوام بی‌نظیر، ما همراه مطمئن شما در بسته‌بندی‌های صنعتی و خانگی هستیم.</p>
+    <a href="#contact" class="cta-button" id="cta-button">دریافت مشاوره رایگان</a>
    </div>
-  </section><!-- About Section -->
+  </section>
+
   <section class="about" id="about">
    <div class="container">
-    <h2 class="section-title" id="about-title">درباره ما</h2>
-    <div class="about-content">
+    <h2 class="section-title" id="about-title">چرا برنو یونیتی؟</h2>
+    <div class="about-grid">
      <div class="about-card">
-      <div class="icon">
-       🏭
-      </div>     </div>
+      <div class="icon">🏭</div>
+      <h3>زیرساخت مدرن</h3>
+      <p>بهره‌گیری از تکنولوژی‌های روز دنیا در فرآیند تولید برای تضمین بالاترین سطح کیفی.</p>
+     </div>
      <div class="about-card">
-      <div class="icon">
-       ⭐
-      </div>
+      <div class="icon">⭐</div>
       <h3>برند معتبر برنو یونیتی</h3>
-      <p>برند برنو یونیتی با بیش از ۲۰ سال حضور موفق در بازار، شناخته شده برای تولید چسب‌های متنوع و با کیفیت حرفه‌ای است. انواع چسب‌های کریستال، شفاف (کلیر)، کاغذی و حرارتی ما، طراحی شده‌اند تا بالاترین میزان چسبندگی، دوام و مقاومت در برابر حرارت و رطوبت را ارائه دهند. محصولات ما برای بسته‌بندی کارتن‌های سنگین، مصارف صنعتی، اداری و خانگی کاملاً مناسب و قابل اعتماد هستند.</p>
+      <p>برند برنو یونیتی با بیش از ۲۰ سال حضور موفق در بازار، شناخته شده برای تولید چسب‌های متنوع و با کیفیت حرفه‌ای است.</p>
      </div>
      <div class="about-card">
-      <div class="icon">
-       👥
-      </div>
-      <h3>تیم متخصص و حرفه‌ای</h3>
-      <p>تیم حرفه‌ای ما شامل بیش از ۶۰ کارمند با تجربه و متخصص است که با تعهد کامل به کیفیت و نوآوری، هر مرحله از تولید چسب‌ها و محصولات بسته‌بندی را با دقت انجام می‌دهند. از طراحی و انتخاب مواد اولیه گرفته تا تولید نهایی و کنترل کیفیت، همه مراحل با بالاترین استانداردها هماهنگ شده‌اند تا مشتریان ما بهترین تجربه ممکن را داشته باشند.</p>
-     </div>
-    </div>
-   </div>
-  </section><!-- Stats Section -->
-  <section class="stats">
-   <div class="container">
-    <div class="stats-grid">
-     <div class="stat-item">
-      <h2>20+</h2>
-      <p>سال سابقه درخشان در صنعت چسب و بسته‌بندی</p>
-     </div>
-     <div class="stat-item">
-      <h2>60+</h2>
-      <p>کارمند متخصص و متعهد، تضمین‌کننده کیفیت محصولات</p>
-     </div>
-     <div class="stat-item">
-      <h2>1000+</h2>
-      <p>مشتری راضی و وفادار در سطح کشور</p>
+      <div class="icon">👥</div>
+      <h3>تیم متخصص</h3>
+      <p>تیم حرفه‌ای ما شامل بیش از ۶۰ کارشناس مجرب است که با تعهد کامل به کیفیت و نوآوری فعالیت می‌کنند.</p>
      </div>
     </div>
    </div>
   </section>
-</section><!-- Products Section -->
-  <section class="products" id="products">
+
+  <section class="stats">
    <div class="container">
-    <h2 class="section-title" id="products-title">محصولات ما</h2>
-    <div class="products-grid">
-     <div class="product-card">
-      <div class="product-icon">
-       💎
-      </div>
-      <h3>چسب کریستال</h3>
-      <p>چسب کریستال یونیتی با شفافیت کامل و چسبندگی بی‌نظیر، انتخابی ایده‌آل برای بسته‌بندی‌های حرفه‌ای و صنعتی است. این چسب برای مصارف دقیق و حساس طراحی شده و تضمین می‌کند که محصولات شما با ظاهری تمیز و مرتب بسته‌بندی شوند.</p>
+    <div class="stats-grid">
+     <div class="stat-item">
+      <h2>+20</h2>
+      <p>سال سابقه درخشان</p>
      </div>
-     <div class="product-card">
-      <div class="product-icon">
-       ✨
-      </div>
-      <h3>چسب شیشه‌ای (Clear)</h3>
-      <p>چسب شیشه‌ای یا Clear یونیتی، مناسب برای کاربردهای دقیق و حساس است. این چسب با ظاهری شفاف و بی‌نقص، بهترین گزینه برای بسته‌بندی‌های شیشه‌ای، اسناد مهم و محصولاتی است که نیاز به نمایی حرفه‌ای و زیبا دارند.</p>
+     <div class="stat-item">
+      <h2>+60</h2>
+      <p>کارمند متخصص</p>
      </div>
-     <div class="product-card">
-      <div class="product-icon">
-       📄
-      </div>
-      <h3>چسب کاغذی</h3>
-      <p>چسب کاغذی یونیتی، ایده‌آل برای بسته‌بندی‌های سبک و محیط‌دوستانه است. این چسب به‌سادگی روی انواع کاغذ و کارتن‌های سبک اعمال می‌شود و مناسب ادارات، مدارس و مصارف خانگی است، بدون آنکه آسیبی به محیط زیست وارد کند.</p>
-     </div>
-     <div class="product-card">
-      <div class="product-icon">
-       🔥
-      </div>
-      <h3>چسب حرارتی</h3>
-      <p>چسب حرارتی یونیتی با مقاومت بالا، مخصوص کاربردهای صنعتی و بسته‌بندی‌های سنگین طراحی شده است. این محصول در برابر حرارت، رطوبت و فشارهای محیطی عملکردی بی‌نقص ارائه می‌دهد و اطمینان می‌دهد که بسته‌بندی‌های صنعتی شما بدون مشکل باقی بمانند.</p>
+     <div class="stat-item">
+      <h2>+1000</h2>
+      <p>مشتری وفادار</p>
      </div>
     </div>
    </div>
-  </section><!-- Gallery Section -->
+  </section>
+
+  <section class="products" id="products">
+   <div class="container">
+    <h2 class="section-title" id="products-title">محصولات برتر ما</h2>
+    <div class="products-grid">
+     <div class="product-card">
+      <div class="product-icon">💎</div>
+      <h3>چسب کریستال</h3>
+      <p>شفافیت کامل و چسبندگی بی‌نظیر برای بسته‌بندی‌های حرفه‌ای و صنعتی.</p>
+     </div>
+     <div class="product-card">
+      <div class="product-icon">✨</div>
+      <h3>چسب شیشه‌ای (Clear)</h3>
+      <p>مناسب برای کاربردهای دقیق و حساس با ظاهری شفاف و بی‌نقص.</p>
+     </div>
+     <div class="product-card">
+      <div class="product-icon">📄</div>
+      <h3>چسب کاغذی</h3>
+      <p>ایده‌آل برای بسته‌بندی‌های سبک و محیط‌دوستانه در ادارات و مدارس.</p>
+     </div>
+     <div class="product-card">
+      <div class="product-icon">🔥</div>
+      <h3>چسب حرارتی</h3>
+      <p>مخصوص کاربردهای صنعتی با مقاومت بالا در برابر فشار و حرارت.</p>
+     </div>
+    </div>
+   </div>
+  </section>
+
   <section class="gallery" id="gallery">
    <div class="container">
     <h2 class="section-title" id="gallery-title">گالری محصولات</h2>
-    <p style="text-align: center; font-size: 18px; color: #4a5568; margin-bottom: 50px;">نمونه‌هایی از محصولات باکیفیت و متنوع برنو یونیتی، قابل استفاده در مصارف خانگی، اداری و صنعتی</p>
-    <div class="gallery-grid"> 
+    <div class="gallery-grid">
      <div class="gallery-item">
-      <div class="gallery-image"><img src="aa2.jpg" alt="چسب کلیر یونیتی" onerror="this.src=''; this.alt='تصویر در دسترس نیست'; this.style.display='none';">
-       <div class="gallery-overlay"><span class="gallery-overlay-text">چسب کلیر</span>
-       </div>
-      </div>
-      <div class="gallery-info">
-       <h3>چسب کلیر</h3>
-       <p>چسب کلیر با شفافیت کامل و چسبندگی قوی، مناسب برای بسته‌بندی‌های ظریف و حساس و حفظ ظاهر تمیز محصولات.</p>
-      </div>
+      <div class="gallery-image"><img src="aa2.jpg" alt="چسب کلیر یونیتی"></div>
+      <div class="gallery-info"><h3>چسب کلیر</h3><p>شفافیت و قدرت در یک محصول.</p></div>
      </div>
      <div class="gallery-item">
-      <div class="gallery-image"><img src="aa3.jpg" alt="چسب ماتیکی یونیتی" onerror="this.src=''; this.alt='تصویر در دسترس نیست'; this.style.display='none';">
-       <div class="gallery-overlay"><span class="gallery-overlay-text">چسب ماتیکی</span>
-       </div>
-      </div>
-      <div class="gallery-info">
-       <h3>چسب ماتیکی</h3>
-       <p>چسب ماتیکی یونیتی، سازگار با محیط زیست و ایده‌آل برای بسته‌بندی‌های سبک و کاربردهای روزمره بدون ایجاد آسیب به سطح محصولات.</p>
-      </div>
+      <div class="gallery-image"><img src="aa3.jpg" alt="چسب ماتیکی یونیتی"></div>
+      <div class="gallery-info"><h3>چسب ماتیکی</h3><p>کاربرد آسان و تمیز.</p></div>
      </div>
      <div class="gallery-item">
-      <div class="gallery-image"><img src="aa4.jpg" alt="چسب حرارتی یونیتی" onerror="this.src=''; this.alt='تصویر در دسترس نیست'; this.style.display='none';">
-       <div class="gallery-overlay"><span class="gallery-overlay-text">چسب حرارتی</span>
-       </div>
-      </div>
-      <div class="gallery-info">
-       <h3>چسب حرارتی</h3>
-       <p>چسب حرارتی با مقاومت بسیار بالا در برابر حرارت، رطوبت و فشار، مناسب برای بسته‌بندی‌های صنعتی سنگین و حرفه‌ای.</p>
-      </div>
+      <div class="gallery-image"><img src="aa4.jpg" alt="چسب حرارتی یونیتی"></div>
+      <div class="gallery-info"><h3>چسب حرارتی</h3><p>برای سخت‌ترین اتصال‌ها.</p></div>
      </div>
      <div class="gallery-item">
-      <div class="gallery-image"><img src="aa8.jpg" alt="چسب صنعتی برنو یونیتی" onerror="this.src=''; this.alt='تصویر در دسترس نیست'; this.style.display='none';">
-       <div class="gallery-overlay"><span class="gallery-overlay-text">چسب صنعتی با رنگ‌های متنوع</span>
-       </div>
-      </div>
-      <div class="gallery-info">
-       <h3>چسب صنعتی</h3>
-       <p>چسب صنعتی یونیتی مخصوص کاربردهای سنگین و بسته‌بندی‌های صنعتی طراحی شده، با مقاومت بالا و قابلیت استفاده در شرایط محیطی دشوار.</p>
-      </div>
+      <div class="gallery-image"><img src="aa8.jpg" alt="چسب صنعتی برنو یونیتی"></div>
+      <div class="gallery-info"><h3>چسب صنعتی</h3><p>تنوع رنگ و کارایی بالا.</p></div>
      </div>
-     
-      <div class="gallery-item">
-  <div class="gallery-image">
-    <img src="unnameda.webp" alt="چسب کش یونیتی" onerror="this.src=''; this.alt='تصویر در دسترس نیست'; this.style.display='none';">
-    <div class="gallery-overlay">
-      <span class="gallery-overlay-text">چسب کش با کیفیت بالا و کاربرد آسان</span>
-    </div>
-  </div>
-  <div class="gallery-info">
-    <h3>چسب کش</h3>
-    <p>چسب کش با قدرت چسبندگی مناسب برای مصارف خانگی و اداری، مقاوم در برابر رطوبت و استفاده آسان.</p>
-  </div>
-</div>
-
-     
      <div class="gallery-item">
-      <div class="gallery-image"><img src="aa6.jpg" alt="چسب کاغذی یونیتی" onerror="this.src=''; this.alt='تصویر در دسترس نیست'; this.style.display='none';">
-       <div class="gallery-overlay"><span class="gallery-overlay-text">چسب کاغذی</span>
-       </div>
-      </div>
-      <div class="gallery-info">
-       <h3>چسب کاغذی</h3>
-       <p>چسب کاغذی یونیتی برای بسته‌بندی‌های سبک و محیط‌دوستانه، قابل استفاده در منازل، مدارس و ادارات، با دوام و کارایی بالا.</p>
-      </div>
+      <div class="gallery-image"><img src="unnameda.webp" alt="چسب کش یونیتی"></div>
+      <div class="gallery-info"><h3>چسب کش</h3><p>مقاوم و منعطف.</p></div>
+     </div>
+     <div class="gallery-item">
+      <div class="gallery-image"><img src="aa6.jpg" alt="چسب کاغذی یونیتی"></div>
+      <div class="gallery-info"><h3>چسب کاغذی</h3><p>دوست‌دار محیط زیست.</p></div>
      </div>
     </div>
    </div>
-  </section><!-- Features Section -->
+  </section>
+
   <section class="features" id="features">
    <div class="container">
-    <h2 class="section-title" id="features-title">ویژگی‌های محصولات</h2>
+    <h2 class="section-title" id="features-title">ویژگی‌های متمایز</h2>
     <div class="features-grid">
      <div class="feature-card">
-      <h3><span class="checkmark">✓</span> چسبندگی فوق‌العاده</h3>
-      <p>قدرت چسبندگی بی‌نظیر محصولات یونیتی، مناسب برای بسته‌بندی‌های سنگین، صنعتی و کاربردهایی که نیاز به امنیت و دوام بالا دارند.</p>
+      <span class="checkmark">✓</span>
+      <div>
+       <h3>چسبندگی فوق‌العاده</h3>
+       <p>قدرت چسبندگی بی‌نظیر برای تمام سطوح صنعتی و کارتن‌های سنگین.</p>
+      </div>
      </div>
      <div class="feature-card">
-      <h3><span class="checkmark">✓</span> دوام و ماندگاری طولانی</h3>
-      <p>محصولات ما پایداری و دوام بسیار بالایی دارند و در طول زمان بدون افت کیفیت و چسبندگی باقی می‌مانند.</p>
+      <span class="checkmark">✓</span>
+      <div>
+       <h3>دوام و ماندگاری</h3>
+       <p>پایداری طولانی‌مدت بدون افت کیفیت در شرایط مختلف محیطی.</p>
+      </div>
      </div>
      <div class="feature-card">
-      <h3><span class="checkmark">✓</span> مقاومت حرارتی بی‌نظیر</h3>
-      <p>چسب‌های یونیتی در برابر حرارت‌های بالا و پایین عملکرد خود را حفظ می‌کنند و مناسب محیط‌های صنعتی و کاربردهای حساس هستند.</p>
-     </div>
-     <div class="feature-card">
-      <h3><span class="checkmark">✓</span> مقاومت در برابر رطوبت</h3>
-      <p>تمام محصولات مقاوم در برابر رطوبت و شرایط نامساعد جوی هستند و کیفیت خود را حتی در محیط‌های مرطوب حفظ می‌کنند.</p>
-     </div>
-     <div class="feature-card">
-      <h3><span class="checkmark">✓</span> کاربرد چندمنظوره و حرفه‌ای</h3>
-      <p>چسب‌ها و محصولات ما برای انبارها، ادارات، منازل و مصارف صنعتی طراحی شده‌اند و در تمام شرایط کاربردی هستند.</p>
-     </div>
-     <div class="feature-card">
-      <h3><span class="checkmark">✓</span> اعتماد حرفه‌ای‌ها</h3>
-      <p>هزاران کسب‌وکار و صنعت حرفه‌ای به کیفیت محصولات یونیتی اعتماد دارند و از دوام و عملکرد عالی آن‌ها بهره می‌برند.</p>
+      <span class="checkmark">✓</span>
+      <div>
+       <h3>مقاومت حرارتی</h3>
+       <p>عملکرد پایدار در دماهای بسیار بالا و بسیار پایین.</p>
+      </div>
      </div>
     </div>
    </div>
-  </section><!-- Contact Section -->
+  </section>
+
   <section class="contact" id="contact">
    <div class="container">
-    <div class="contact-content">
-     <h2 class="section-title" id="contact-title">تماس با ما</h2>
-     <p style="font-size: 18px; color: #4a5568; margin-bottom: 40px;">برای دریافت مشاوره رایگان و سفارش محصولات با ما در ارتباط باشید</p>
-     <div class="contact-info">
-      <div class="contact-card">
-       <div class="icon">
-        📞
-       </div>
-       <h3>تلفن تماس</h3>
-       <p class="phone-number">09173108135</p>
-       <p class="contact-name"></p>
-      </div>
-      <div class="contact-card">
-       <div class="icon">
-        📧
-       </div>
-       <h3>ایمیل</h3>
-       <p>پاسخگوی سوالات شما</p>
-      </div>
-      <div class="contact-card">
-       <div class="icon">
-        📍
-       </div>
-       <h3>آدرس</h3>
-       <p>مراجعه حضوری امکان‌پذیر است</p>
-      </div>
+    <h2 class="section-title" id="contact-title">ارتباط با ما</h2>
+    <div class="contact-grid">
+     <div class="contact-card">
+      <div class="icon">📞</div>
+      <h3>تلفن تماس</h3>
+      <span class="phone-number">09173108135</span>
+      <p>آماده پاسخگویی به شما</p>
+     </div>
+     <div class="contact-card">
+      <div class="icon">📍</div>
+      <h3>آدرس</h3>
+      <p>امکان مراجعه حضوری و مشاوره مستقیم</p>
+     </div>
+     <div class="contact-card">
+      <div class="icon">📧</div>
+      <h3>ایمیل</h3>
+      <p>info@barnounity.com</p>
      </div>
     </div>
    </div>
-  </section><!-- Footer -->
+  </section>
+
   <footer>
    <div class="container">
-    <div class="footer-content">
-     <p><strong>برنو یونیتی</strong></p>
-     <p>تولید کننده چسب‌های صنعتی و حرفه‌ای</p>
-     <p>بیش از 20 سال تجربه در خدمت شما</p>
-    </div>
+    <p><strong>برنو یونیتی</strong></p>
+    <p>تولید کننده پیشرو چسب‌های صنعتی و حرفه‌ای با ۲۰ سال سابقه</p>
     <div class="copyright">
-     <p>© 2024 برنو یونیتی. تمامی حقوق محفوظ است.</p>
+     <p>© 2024 تمامی حقوق برای برنو یونیتی محفوظ است.</p>
     </div>
    </div>
   </footer>
+
   <script>
         const defaultConfig = {
             company_name: 'برنو یونیتی',
-            hero_title: 'تولید کننده چسب‌های صنعتی حرفه‌ای',
-            hero_subtitle: 'بیش از 20 سال تجربه درخشان در صنعت چسب',
-            cta_button: 'تماس با ما',
-            about_title: 'درباره ما',
-            products_title: 'محصولات ما',
+            hero_title: 'تولیدکننده پیشرو چسب‌های بسته‌بندی و صنعتی',
+            hero_subtitle: 'با بیش از ۲۰ سال تجربه ارزشمند در تولید انواع چسب با کیفیت حرفه‌ای و دوام بی‌نظیر، ما همراه مطمئن شما در بسته‌بندی‌های صنعتی و خانگی هستیم.',
+            cta_button: 'دریافت مشاوره رایگان',
+            about_title: 'چرا برنو یونیتی؟',
+            products_title: 'محصولات برتر ما',
             gallery_title: 'گالری محصولات',
-            features_title: 'ویژگی‌های محصولات',
-            contact_title: 'تماس با ما'
+            features_title: 'ویژگی‌های متمایز',
+            contact_title: 'ارتباط با ما'
         };
 
         async function onConfigChange(config) {
@@ -876,51 +597,25 @@
             document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
         }
 
-        function mapToCapabilities(config) {
-            return {
-                recolorables: [],
-                borderables: [],
-                fontEditable: undefined,
-                fontSizeable: undefined
-            };
-        }
-
-        function mapToEditPanelValues(config) {
-            return new Map([
-                ['company_name', config.company_name || defaultConfig.company_name],
-                ['hero_title', config.hero_title || defaultConfig.hero_title],
-                ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
-                ['cta_button', config.cta_button || defaultConfig.cta_button],
-                ['about_title', config.about_title || defaultConfig.about_title],
-                ['products_title', config.products_title || defaultConfig.products_title],
-                ['gallery_title', config.gallery_title || defaultConfig.gallery_title],
-                ['features_title', config.features_title || defaultConfig.features_title],
-                ['contact_title', config.contact_title || defaultConfig.contact_title]
-            ]);
-        }
-
         if (window.elementSdk) {
             window.elementSdk.init({
                 defaultConfig,
                 onConfigChange,
-                mapToCapabilities,
-                mapToEditPanelValues
+                mapToCapabilities: (config) => ({ recolorables: [], borderables: [] }),
+                mapToEditPanelValues: (config) => new Map(Object.entries(config))
             });
         }
 
-        // Smooth scroll for navigation
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a6a3e4a607bc5ad',t:'MTc2NDUwNDY0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ </body>
 </html>
